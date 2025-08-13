@@ -29,29 +29,30 @@
         .setup-screen .subtitle {
             text-align: center;
             color: #475569;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
         }
-        .filter-group {
-            margin-bottom: 20px;
-            padding: 20px;
+        .filter-container {
+            margin-bottom: 8px;
+            padding: 16px;
             background-color: #ffffff;
             border: 1px solid #e2e8f0;
             border-radius: 12px;
             box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
         }
-        .filter-group h3 {
-            font-size: 1.1rem;
+        .filter-container h3 {
+            font-size: 1rem;
             font-weight: 700;
             color: #065f46;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
         .filter-buttons {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 6px;
         }
         .filter-button {
-            padding: 8px 16px;
+            padding: 4px 10px;
+            font-size: 0.875rem;
             background-color: #f1f5f9;
             color: #334155;
             border: 1px solid #cbd5e1;
@@ -72,7 +73,7 @@
         .start-quiz-btn {
             display: block;
             width: 100%;
-            padding: 16px;
+            padding: 12px;
             font-size: 1.25rem;
             font-weight: 700;
             color: white;
@@ -80,7 +81,7 @@
             border: none;
             border-radius: 12px;
             cursor: pointer;
-            margin-top: 32px;
+            margin-top: 24px;
             transition: background-color 0.2s ease;
         }
         .start-quiz-btn:hover {
@@ -325,35 +326,50 @@
             <h1>Social Media Quiz</h1>
             <p class="subtitle">Wählen Sie den Modus und die Fragen aus, die Sie üben möchten.</p>
 
-            <div class="filter-group">
-                <h3>Modus:</h3>
-                <div class="filter-buttons" id="modeFilterButtons">
-                    <button class="filter-button active" data-filter-type="mode" data-filter-value="practice">Übungsmodus</button>
-                    <button class="filter-button" data-filter-type="mode" data-filter-value="exam">Prüfungsmodus (100 Fragen)</button>
-                </div>
-            </div>
-
-            <div id="practiceFilters">
-                <div class="filter-group">
-                    <h3>Typ:</h3>
-                    <div class="filter-buttons" id="typeFilterButtons">
-                        <button class="filter-button active" data-filter-type="type" data-filter-value="Alle">Alle</button>
-                        <button class="filter-button" data-filter-type="type" data-filter-value="Musterprüfung">Musterprüfung</button>
-                        <button class="filter-button" data-filter-type="type" data-filter-value="Quiz LF">Quiz LF</button>
+            <div class="filter-container">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-x-6">
+                    <!-- Column 1: Modus -->
+                    <div>
+                        <h3>Modus:</h3>
+                        <div class="filter-buttons" id="modeFilterButtons">
+                            <button class="filter-button active" data-filter-type="mode" data-filter-value="practice">Übungsmodus</button>
+                            <button class="filter-button" data-filter-type="mode" data-filter-value="exam">Prüfungsmodus (100 Fragen)</button>
+                        </div>
+                    </div>
+                    <!-- Column 2: Typ -->
+                    <div data-practice-filter>
+                        <h3>Typ:</h3>
+                        <div class="filter-buttons" id="typeFilterButtons">
+                            <button class="filter-button active" data-filter-type="type" data-filter-value="Alle">Alle</button>
+                            <button class="filter-button" data-filter-type="type" data-filter-value="Musterprüfung">Musterprüfung</button>
+                            <button class="filter-button" data-filter-type="type" data-filter-value="Quiz LF">Quiz LF</button>
+                        </div>
+                    </div>
+                    <!-- Column 3: LF -->
+                    <div data-practice-filter>
+                        <h3>LF:</h3>
+                        <div class="filter-buttons" id="sectionFilterButtons">
+                            <!-- Dynamic buttons -->
+                        </div>
+                    </div>
+                    <!-- Column 4: Anzahl -->
+                    <div data-practice-filter>
+                        <h3>Anzahl der Fragen:</h3>
+                        <div class="filter-buttons" id="questionCountFilterButtons">
+                             <button class="filter-button" data-filter-type="count" data-filter-value="10">10</button>
+                             <button class="filter-button" data-filter-type="count" data-filter-value="25">25</button>
+                             <button class="filter-button" data-filter-type="count" data-filter-value="50">50</button>
+                             <button class="filter-button active" data-filter-type="count" data-filter-value="Alle" id="allQuestionsBtn">Alle</button>
+                        </div>
                     </div>
                 </div>
-                <div class="filter-group">
-                    <h3>LF:</h3>
-                    <div class="filter-buttons" id="sectionFilterButtons">
-                        <!-- Dynamic buttons -->
-                    </div>
-                </div>
             </div>
+            
             <button id="startQuizBtn" class="start-quiz-btn">Quiz starten</button>
             
             <div class="instructions">
                 <h3>Informationen zur Bedienung</h3>
-                <p><strong>Übungsmodus:</strong> Wählen Sie gezielt Fragen nach Typ und Lernfeld (LF) aus, um bestimmte Themen zu trainieren. Die Anzahl der Fragen richtet sich nach Ihrer Auswahl.</p>
+                <p><strong>Übungsmodus:</strong> Wählen Sie gezielt Fragen nach Typ, Lernfeld (LF) und Anzahl aus, um bestimmte Themen zu trainieren.</p>
                 <p><strong>Prüfungsmodus:</strong> Startet eine Prüfungssimulation mit 100 zufällig ausgewählten Fragen aus dem gesamten Pool.</p>
                 <p><strong>Intelligentes Lernen:</strong> Das System merkt sich alle Fragen, die Sie falsch beantworten. Im nächsten Prüfungsmodus werden diese Fragen automatisch bevorzugt, damit Sie sie gezielt wiederholen können. Sobald Sie eine dieser Fragen richtig beantworten, wird sie aus der "Wiederholungsliste" entfernt. <strong>(Hinweis: Diese Funktion speichert die Daten nur in der aktuellen Browser-Sitzung. Ein Neuladen der Seite setzt den Speicher zurück.)</strong></p>
             </div>
@@ -433,6 +449,7 @@
         const practiceFiltersContainer = document.getElementById('practiceFilters');
         const typeFilterButtons = document.getElementById('typeFilterButtons');
         const sectionFilterButtons = document.getElementById('sectionFilterButtons');
+        const questionCountFilterButtons = document.getElementById('questionCountFilterButtons');
         const startQuizBtn = document.getElementById('startQuizBtn');
         const progressIndicator = document.getElementById('progressIndicator');
         const timerEl = document.getElementById('timer');
@@ -444,6 +461,7 @@
         const submitBtn = document.getElementById('submitBtn');
         const scoreEl = document.getElementById('score');
         const restartBtn = document.getElementById('restartBtn');
+        const allQuestionsBtn = document.getElementById('allQuestionsBtn');
 
         // --- STATE ---
         const ACCESS_CODE = "2412";
@@ -457,6 +475,7 @@
         let quizMode = 'practice'; // 'practice' or 'exam'
         let selectedType = 'Alle';
         let selectedSection = 'Alle';
+        let selectedQuestionCount = 'Alle';
 
         // --- FUNCTIONS ---
         
@@ -520,6 +539,7 @@
 
             allQuestions = Array.from(questionMap.values()).map(q => ({ ...q, ...parseQuestionName(q.name) }));
             setupFilters();
+            updateAllQuestionsCount();
         }
 
         function setupFilters() {
@@ -529,6 +549,16 @@
                 `<button class="filter-button ${section === 'Alle' ? 'active' : ''}" data-filter-type="section" data-filter-value="${section}">${section}</button>`
             ).join('');
         }
+        
+        function updateAllQuestionsCount() {
+            const filteredQuestions = allQuestions.filter(q => {
+                const typeMatch = selectedType === 'Alle' || q.type === selectedType;
+                const sectionMatch = selectedSection === 'Alle' || q.section === selectedSection;
+                return typeMatch && sectionMatch;
+            });
+            const count = filteredQuestions.length;
+            allQuestionsBtn.textContent = `Alle (${count})`;
+        }
 
         function handleFilterClick(e) {
             const button = e.target.closest('.filter-button');
@@ -537,18 +567,25 @@
 
             if (filterType === 'mode') {
                 quizMode = filterValue;
-                practiceFiltersContainer.classList.toggle('hidden', quizMode === 'exam');
+                document.querySelectorAll('[data-practice-filter]').forEach(el => el.classList.toggle('hidden', quizMode === 'exam'));
             } else if (filterType === 'type') {
                 selectedType = filterValue;
             } else if (filterType === 'section') {
                 selectedSection = filterValue;
+            } else if (filterType === 'count') {
+                selectedQuestionCount = filterValue;
             }
 
             button.parentElement.querySelectorAll('.filter-button').forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
+
+            if (filterType === 'type' || filterType === 'section') {
+                updateAllQuestionsCount();
+            }
         }
 
         function startQuiz() {
+            let filteredQuestions;
             if (quizMode === 'exam') {
                 const incorrectTexts = getIncorrectlyAnswered();
                 const incorrectQuestions = allQuestions.filter(q => incorrectTexts.includes(q.question));
@@ -560,11 +597,18 @@
                 quizQuestions = [...incorrectQuestions, ...shuffledRemaining.slice(0, needed)];
                 
             } else {
-                quizQuestions = allQuestions.filter(q => {
+                filteredQuestions = allQuestions.filter(q => {
                     const typeMatch = selectedType === 'Alle' || q.type === selectedType;
                     const sectionMatch = selectedSection === 'Alle' || q.section === selectedSection;
                     return typeMatch && sectionMatch;
                 });
+
+                let shuffled = shuffle(filteredQuestions);
+                if (selectedQuestionCount !== 'Alle') {
+                    quizQuestions = shuffled.slice(0, parseInt(selectedQuestionCount, 10));
+                } else {
+                    quizQuestions = shuffled;
+                }
             }
 
             if (quizQuestions.length === 0) {
@@ -743,6 +787,7 @@
             modeFilterButtons.addEventListener('click', handleFilterClick);
             typeFilterButtons.addEventListener('click', handleFilterClick);
             sectionFilterButtons.addEventListener('click', handleFilterClick);
+            questionCountFilterButtons.addEventListener('click', handleFilterClick);
             startQuizBtn.addEventListener('click', startQuiz);
             prevBtn.addEventListener('click', showPrevQuestion);
             nextBtn.addEventListener('click', showNextQuestion);
