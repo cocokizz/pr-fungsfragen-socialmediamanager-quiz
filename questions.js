@@ -699,12 +699,6 @@ const initialRawQuestions = [
         correct: ["Ein Supply Chain Manager ist ein Fachmann, der für die Planung, Ausführung und Überwachung aller Aktivitäten innerhalb der Lieferkette eines Unternehmens verantwortlich ist.", "Dies umfasst die Beschaffung von Rohmaterialien, die Produktion, die Lagerung und die Distribution von Produkten bis hin zur Auslieferung an den Endkunden."]
     },
     {
-        name: "Quiz LF A.1 Frage 04",
-        question: "Was ist Content Curation?",
-        answers: ["Content Curation bezeichnet den Prozess des Sammelns, Auswählens und Teilens von relevanten Inhalten aus verschiedenen Quellen im Social Media Marketing.", "Diese Strategie hilft Marken, ihre Online-Präsenz zu stärken und Autorität aufzubauen, ohne ständig neue Inhalte erstellen zu müssen."],
-        correct: ["Content Curation bezeichnet den Prozess des Sammelns, Auswählens und Teilens von relevanten Inhalten aus verschiedenen Quellen im Social Media Marketing.", "Diese Strategie hilft Marken, ihre Online-Präsenz zu stärken und Autorität aufzubauen, ohne ständig neue Inhalte erstellen zu müssen."]
-    },
-    {
         name: "Quiz LF A.1 Frage 05",
         question: "Was ist der Unterschied zwischen Cross- und Upselling?",
         answers: ["Cross-Selling: Bietet zusätzliche Produkte oder Dienstleistungen an, die das ursprüngliche Produkt ergänzen.", "Upselling: Bewegt Kunden zu einem teureren oder höherwertigen Produkt."],
@@ -843,12 +837,6 @@ const initialRawQuestions = [
         correct: ["Social Selling bezieht sich auf die Nutzung sozialer Medien, um Beziehungen zu potenziellen Kunden aufzubauen und Verkaufschancen zu fördern.", "Personal Branding hingegen konzentriert sich darauf, eine individuelle Marke zu entwickeln, die die eigene Identität und Expertise widerspiegelt."]
     },
     {
-        name: "Quiz LF B.3 Frage 05",
-        question: "Warum spielt Xing im Content-Marketing häufig eine untergeordnete Rolle?",
-        answers: ["Die Nutzer sind auf der Plattform eher passiv, es wird eher wenig mit Content interagiert.", "Das Veröffentlichen von Beiträgen ist auf Xing generell nicht möglich."],
-        correct: ["Die Nutzer sind auf der Plattform eher passiv, es wird eher wenig mit Content interagiert."]
-    },
-    {
         name: "Quiz LF B.4 Frage 01",
         question: "Ordne die nachfolgenden Plattformen nach Alter der Nutzer aufsteigend: Facebook, Tik Tok, Instagram, Snapchat",
         answers: ["Die aufsteigende Reihenfolge nach Alter der Nutzer ist: Snapchat, TikTok, Instagram, Facebook."],
@@ -907,12 +895,6 @@ const initialRawQuestions = [
         question: "Was sind demografische Merkmale einer Zielgruppe?",
         answers: ["Alter.", "Geschlecht.", "Psyche.", "Kaufverhalten."],
         correct: ["Alter.", "Geschlecht."]
-    },
-    {
-        name: "Quiz LF C.3 Frage 03",
-        question: "Was ist der Unterschied zwischen einer Zielgruppe und einer Persona?",
-        answers: ["Personas sind fiktive Charaktere, die auf realen Daten und Verhaltensmustern basieren und eine Zielgruppe repräsentieren.", "Personas sind ein effektives Mittel, um abstrakte Daten über Zielgruppen zu personifizieren und lebendiger zu gestalten."],
-        correct: ["Personas sind fiktive Charaktere, die auf realen Daten und Verhaltensmustern basieren und eine Zielgruppe repräsentieren.", "Personas sind ein effektives Mittel, um abstrakte Daten über Zielgruppen zu personifizieren und lebendiger zu gestalten."]
     },
     {
         name: "Quiz LF C.3 Frage 04",
