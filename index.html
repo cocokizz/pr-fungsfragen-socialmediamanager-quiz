@@ -355,6 +355,7 @@
                 <h3>Informationen zur Bedienung</h3>
                 <p><strong>Übungsmodus:</strong> Wählen Sie gezielt Fragen nach Typ und Lernfeld (LF) aus, um bestimmte Themen zu trainieren. Die Anzahl der Fragen richtet sich nach Ihrer Auswahl.</p>
                 <p><strong>Prüfungsmodus:</strong> Startet eine Prüfungssimulation mit 100 zufällig ausgewählten Fragen aus dem gesamten Pool.</p>
+                <p><strong>Intelligentes Lernen:</strong> Das System merkt sich alle Fragen, die Sie falsch beantworten. Im nächsten Prüfungsmodus werden diese Fragen automatisch bevorzugt, damit Sie sie gezielt wiederholen können. Sobald Sie eine dieser Fragen richtig beantworten, wird sie aus der "Wiederholungsliste" entfernt.</p>
             </div>
         </div>
 
@@ -446,6 +447,7 @@
 
         // --- STATE ---
         const ACCESS_CODE = "2412";
+        const INCORRECT_QUESTIONS_KEY = 'incorrectlyAnsweredQuizQuestions';
         let allQuestions = [];
         let quizQuestions = [];
         let currentQuestionIndex = 0;
@@ -457,6 +459,28 @@
         let selectedSection = 'Alle';
 
         // --- FUNCTIONS ---
+        
+        function getIncorrectlyAnswered() {
+            const stored = localStorage.getItem(INCORRECT_QUESTIONS_KEY);
+            return stored ? JSON.parse(stored) : [];
+        }
+
+        function updateIncorrectlyAnswered() {
+            let incorrect = new Set(getIncorrectlyAnswered());
+            
+            Object.keys(userAnswers).forEach(index => {
+                const questionText = quizQuestions[index].question;
+                const answer = userAnswers[index];
+
+                if (answer.isCorrect) {
+                    incorrect.delete(questionText);
+                } else {
+                    incorrect.add(questionText);
+                }
+            });
+
+            localStorage.setItem(INCORRECT_QUESTIONS_KEY, JSON.stringify(Array.from(incorrect)));
+        }
 
         function shuffle(array) {
             let currentIndex = array.length, randomIndex;
@@ -526,7 +550,15 @@
 
         function startQuiz() {
             if (quizMode === 'exam') {
-                quizQuestions = shuffle([...allQuestions]).slice(0, 100);
+                const incorrectTexts = getIncorrectlyAnswered();
+                const incorrectQuestions = allQuestions.filter(q => incorrectTexts.includes(q.question));
+                
+                const remainingQuestions = allQuestions.filter(q => !incorrectTexts.includes(q.question));
+                const shuffledRemaining = shuffle(remainingQuestions);
+
+                const needed = 100 - incorrectQuestions.length;
+                quizQuestions = [...incorrectQuestions, ...shuffledRemaining.slice(0, needed)];
+                
             } else {
                 quizQuestions = allQuestions.filter(q => {
                     const typeMatch = selectedType === 'Alle' || q.type === selectedType;
@@ -681,6 +713,9 @@
         function showResults() {
             quizScreen.classList.add('hidden');
             resultsScreen.classList.remove('hidden');
+
+            updateIncorrectlyAnswered();
+
             const score = Object.values(userAnswers).filter(ans => ans.isCorrect).length;
             scoreEl.textContent = `Du hast ${score} von ${quizQuestions.length} Fragen richtig beantwortet.`;
         }
