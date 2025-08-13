@@ -211,7 +211,7 @@ const initialRawQuestions = [
     },
     {
         name: "Musterprüfung E.2-Frage 02",
-        question: "Was ist unter dem Begriff  proaktive Redaktionsplanung zu verstehen?",
+        question: "Was ist unter dem Begriff proaktive Redaktionsplanung zu verstehen?",
         answers: ["Inhalte und Kommunikationsmaßnahmen sollen reaktiv auf aktuelle Ereignisse geplant werden.", "Inhalte und Kommunikationsmaßnahmen sollen vorausschauend geplant werden."],
         correct: ["Inhalte und Kommunikationsmaßnahmen sollen vorausschauend geplant werden."]
     },
@@ -364,12 +364,6 @@ const initialRawQuestions = [
         correct: ["User Generated Content wird häufiger geteilt.", "User Generated Content wirkt glaubwürdiger."]
     },
     {
-        name: "Musterprüfung D.2 - Frage 02",
-        question: "In welcher Form kann uns Content begegnen?",
-        answers: ["Text", "Audio", "Video", "Bild"],
-        correct: ["Text", "Audio", "Video", "Bild"]
-    },
-    {
         name: "Musterprüfung A.1-Frage 08",
         question: "Welcher Aspekt gehört nicht zu den Grundprinzipien des Datenschutzes?",
         answers: ["Zweckbindung", "Monetarisierung", "Datensicherheit", "Einwilligung"],
@@ -413,7 +407,7 @@ const initialRawQuestions = [
     },
     {
         name: "Musterprüfung C.2 - Frage 01",
-        question: "Was ist mit dem Begriff  Social Commerce\" gemeint?",
+        question: "Was ist mit dem Begriff Social Commerce gemeint?",
         answers: ["Der direkte Verkauf von Produkten über soziale Medien", "Marktforschung in sozialen Netzwerken", "Eine Art des Empfehlungs-Marketings", "Die Steigerung des Bekanntheitsgrades"],
         correct: ["Der direkte Verkauf von Produkten über soziale Medien"]
     },
@@ -431,7 +425,7 @@ const initialRawQuestions = [
     },
     {
         name: "Musterprüfung D.1 - Frage 04",
-        question: "Was ist mit dem Begriff  Viralität\" gemeint?",
+        question: "Was ist mit dem Begriff Viralität gemeint?",
         answers: ["Viralität bedeutet, dass Inhalte immer auf einer emotionalen Ebene wirken müssen, um ihre Wirkung zu entfalten.", "Viralität bedeutet, dass Inhalte durch Interaktionen wie Likes, Kommentare, Shares und selbst das Abspeichern weiterverbreitet werden."],
         correct: ["Viralität bedeutet, dass Inhalte durch Interaktionen wie Likes, Kommentare, Shares und selbst das Abspeichern weiterverbreitet werden."]
     },
@@ -729,12 +723,6 @@ const initialRawQuestions = [
         correct: ["SMART ist ein Akronym, das für spezifisch, messbar, attraktiv, relevant und terminiert steht und als Leitfaden für die effektive Zielsetzung dient.", "Spezifisch: Das Ziel wird klar benannt.", "Messbar: Die Zielerreichung muss messbar sein (Kennzahlen).", "Attraktiv: Das Ziel muss Lust darauf machen, es zu erreichen.", "Realistisch: Das Ziel darf aber auch nicht frustrierend hoch gehängt werden.", "Terminiert: Bis wann soll das Ziel erreicht werden?."]
     },
     {
-        name: "Quiz LF A.2 Frage 02",
-        question: "Was ist der Unterschied zwischen Vision und Mission?",
-        answers: ["Eine Unternehmensvision beschreibt ein Ziel oder ein Idealbild, das das Unternehmen in der Zukunft erreichen möchte.", "Eine Unternehmensmission beschreibt, was das Unternehmen tut, um seine Vision zu verwirklichen."],
-        correct: ["Eine Unternehmensvision beschreibt ein Ziel oder ein Idealbild, das das Unternehmen in der Zukunft erreichen möchte.", "Eine Unternehmensmission beschreibt, was das Unternehmen tut, um seine Vision zu verwirklichen."]
-    },
-    {
         name: "Quiz LF A.2 Frage 03",
         question: "Was ist der Unterschied zwischen Zielgruppe und Persona?",
         answers: ["Eine Zielgruppe umfasst eine breitere Gruppe von Personen mit bestimmten gemeinsamen Merkmalen (demografisch, psychografisch), die für ein Produkt relevant sind.", "Eine Persona ist eine fiktive, detaillierte Darstellung eines idealen Kunden innerhalb der Zielgruppe."],
@@ -771,22 +759,10 @@ const initialRawQuestions = [
         correct: ["a) Reels."]
     },
     {
-        name: "Quiz LF B.1 Frage 04",
-        question: "Was ist der Meta Business Manager?",
-        answers: ["a) Ein reines Analysetool für Instagram-Profile.", "b) Ein Tool zur zentralen Verwaltung von Unternehmensressourcen im Meta-Ökosystem.", "c) Ein KI-gesteuerter Avatar-Generator für Meta.", "d) Eine kostenpflichtige Werbeanzeigenplattform."],
-        correct: ["b) Ein Tool zur zentralen Verwaltung von Unternehmensressourcen im Meta-Ökosystem."]
-    },
-    {
         name: "Quiz LF B.1 Frage 05",
         question: "Was ist WhatsApp Business?",
         answers: ["a) Ein soziales Netzwerk mit Fokus auf Karrierenetzwerke.", "b) Eine klassische Newsletter-App.", "c) Eine App zur Organisation interner Teamkommunikation.", "d) Eine spezielle Version von WhatsApp für Unternehmen zur direkten Kundenkommunikation."],
         correct: ["d) Eine spezielle Version von WhatsApp für Unternehmen zur direkten Kundenkommunikation."]
-    },
-    {
-        name: "Quiz LF B.1 Frage 06",
-        question: "Welche Netzwerke gehören zum Konzern \"Meta\"?",
-        answers: ["Facebook, Instagram, WhatsApp und Messenger."],
-        correct: ["Facebook, Instagram, WhatsApp und Messenger."]
     },
     {
         name: "Quiz LF B.2 Frage 01",
@@ -849,18 +825,6 @@ const initialRawQuestions = [
         correct: ["Purpose Marketing, oder zweckgetriebenes Marketing, ist eine Marketingstrategie, die darauf abzielt, die Mission und den gesellschaftlichen Einfluss eines Unternehmens in den Mittelpunkt seiner Kommunikationsbemühungen zu stellen.", "Diese Strategie geht über den reinen Verkauf von Produkten oder Dienstleistungen hinaus und konzentriert sich darauf, eine tiefere Verbindung zu den Verbrauchern herzustellen."]
     },
     {
-        name: "Quiz LF C.1 Frage 02",
-        question: "Was sind Benchmarks und wofür verwende ich sie?",
-        answers: ["Ein Benchmark ist ein Vergleichsmaßstab, der als Referenzpunkt dient, um die Leistung von Produkten, Dienstleistungen oder Prozessen zu messen.", "Beispiele im Social Media Management sind: Engagement-Rate, Follower-Wachstum, Klickrate (CTR) und Post-Frequenz."],
-        correct: ["Ein Benchmark ist ein Vergleichsmaßstab, der als Referenzpunkt dient, um die Leistung von Produkten, Dienstleistungen oder Prozessen zu messen.", "Beispiele im Social Media Management sind: Engagement-Rate, Follower-Wachstum, Klickrate (CTR) und Post-Frequenz."]
-    },
-    {
-        name: "Quiz LF C.1 Frage 03",
-        question: "Warum sollte man eigentlich in Social Media Recruiting investieren?",
-        answers: ["Die Zielgruppe (Bewerber und Talente) nutzt Social Media Netzwerke täglich.", "Social Media Recruiting bringt den direkten Kontakt zum Bewerber und die wechselseitige Interaktion.", "Interessenten können auf eine Stellenanzeige reagieren und Rückfragen stellen.", "Es entsteht eine wichtige Verbindung zwischen den beiden Parteien.", "Potenzielle Bewerber können sich sehr einfach und schnell ein Bild von einem Unternehmen machen."],
-        correct: ["Die Zielgruppe (Bewerber und Talente) nutzt Social Media Netzwerke täglich.", "Social Media Recruiting bringt den direkten Kontakt zum Bewerber und die wechselseitige Interaktion.", "Interessenten können auf eine Stellenanzeige reagieren und Rückfragen stellen.", "Es entsteht eine wichtige Verbindung zwischen den beiden Parteien.", "Potenzielle Bewerber können sich sehr einfach und schnell ein Bild von einem Unternehmen machen."]
-    },
-    {
         name: "Quiz LF C.2 Frage 01",
         question: "Warum sind Ziele so wichtig?",
         answers: ["Ziele spielen eine entscheidende Rolle im Social Media Marketing, denn sie geben die Richtung vor und helfen dabei, die Social-Media-Aktivitäten auf die übergeordneten Unternehmensziele abzustimmen.", "Durch klar definierte Ziele können Ressourcen effektiv eingesetzt und Prioritäten gesetzt werden.", "Ziele ermöglichen es zudem, den Erfolg von Social Media Maßnahmen zu messen."],
@@ -909,14 +873,8 @@ const initialRawQuestions = [
         correct: ["Nach den Vorlieben der Zielgruppe."]
     },
     {
-        name: "Quiz LF C.4 Frage 02",
-        question: "Was gilt bei der Auswahl von passenden Social Networks?",
-        answers: ["a) Wir sollten auf allen Channels aktiv sein.", "b) Maximal ein bis zwei Networks sind genug.", "c) Wir sollten dort aktiv werden, wo auch die Zielgruppe aktiv ist.", "d) Social Networks sollten auch zum eigenen Nutzungsverhalten passen."],
-        correct: ["c) Wir sollten dort aktiv werden, wo auch die Zielgruppe aktiv ist.", "d) Social Networks sollten auch zum eigenen Nutzungsverhalten passen."]
-    },
-    {
         name: "Quiz LF D.1 Frage 01",
-        question: "Was soll mit der Aussage  Content is King\" ausgedrückt werden?",
+        question: "Was soll mit der Aussage Content is King ausgedrückt werden?",
         answers: ["a) Gute Inhalte sind die Basis für alle Online-Marketing-Maßnahmen.", "b) Inhalte müssen einen sehr hohen Wertbeitrag für den Umsatz eines Unternehmens bringen."],
         correct: ["a) Gute Inhalte sind die Basis für alle Online-Marketing-Maßnahmen."]
     },
@@ -928,7 +886,7 @@ const initialRawQuestions = [
     },
     {
         name: "Quiz LF D.1 Frage 03",
-        question: "Was soll ein  Call to Action\" bewirken?",
+        question: "Was soll ein Call to Action bewirken?",
         answers: ["Mehr Ideen für die Redaktionsplanung.", "Eine Interaktion seitens der Userinnen und User.", "Effektiveres Ausspielen von Beiträgen.", "Erhöhte Werbeausgaben."],
         correct: ["Eine Interaktion seitens der Userinnen und User."]
     },
@@ -957,24 +915,6 @@ const initialRawQuestions = [
         correct: ["Hohe Authentizität und Ehrlichkeit.", "Unterstützt unsere SEO-Aktivitäten."]
     },
     {
-        name: "Quiz LF D.1 Frage 08",
-        question: "Was ist mit User Generated Content gemeint?",
-        answers: ["a) Content, der jeweils einer User-Gruppe zuzuordnen ist.", "b) Inhalte, die wir der Userin oder dem User bereitstellen.", "c) Eine besondere Form von vordergründigem Content.", "d) Content, der von Userin oder User erstellt wird."],
-        correct: ["d) Content, der von Userin oder User erstellt wird."]
-    },
-    {
-        name: "Quiz LF D.1 Frage 09",
-        question: "Was ist A/B-Testing?",
-        answers: ["Eine Methode, um verschiedene Varianten von Inhalten zu vergleichen und die wirkungsvollste Option zu identifizieren.", "Eine Methode, um relevante Kennzahlen und KPIs zu identifizieren."],
-        correct: ["Eine Methode, um verschiedene Varianten von Inhalten zu vergleichen und die wirkungsvollste Option zu identifizieren."]
-    },
-    {
-        name: "Quiz LF D.1 Frage 10",
-        question: "Was ist Content Curation?",
-        answers: ["Das Sammeln und Aufbereiten von Content.", "Das reine Reposten bzw. Teilen von Beiträgen.", "Das Generieren von eigenen Inhalten.", "Das Aufbauen eines Content-Pools."],
-        correct: ["Das Sammeln und Aufbereiten von Content."]
-    },
-    {
         name: "Quiz LF D.1 Frage 11",
         question: "Was ist bei der Nutzung von KI bei der Content Creation zu beachten?",
         answers: ["Geltende Datenschutzrichtlinien sind zu beachten.", "Verluste des Kundenvertrauens sind möglich.", "Es gilt kein Urheberrecht.", "Falschaussagen seitens der Kl sind quasi ausgeschlossen."],
@@ -999,34 +939,16 @@ const initialRawQuestions = [
         correct: ["User-Generated Content (UGC) sind Inhalte, die von Nutzern erstellt und geteilt werden.", "UGC ist für Unternehmen besonders interessant, weil er Authentizität und Vertrauen schafft.", "UGC ist kosteneffektiv, da er oft kostenlos erstellt wird.", "Er kann sich ebenfalls positiv auf SEO-Aktivitäten auswirken."]
     },
     {
-        name: "Quiz LF D.2 Frage 04",
-        question: "Was ist ein A/B Test?",
-        answers: ["Ein A/B-Test ist eine Methode, bei der zwei Versionen eines digitalen Inhalts verglichen werden, um herauszufinden, welche Version besser abschneidet.", "Im Kontext des Social Media Marketings wird das Publikum in zwei Gruppen aufgeteilt, wobei jede Gruppe eine unterschiedliche Variante des Inhalts sieht."],
-        correct: ["Ein A/B-Test ist eine Methode, bei der zwei Versionen eines digitalen Inhalts verglichen werden, um herauszufinden, welche Version besser abschneidet.", "Im Kontext des Social Media Marketings wird das Publikum in zwei Gruppen aufgeteilt, wobei jede Gruppe eine unterschiedliche Variante des Inhalts sieht."]
-    },
-    {
         name: "Quiz LF D.2 Frage 05",
         question: "Was ist der Unterschied zwischen Content Recycling und Content Curation?",
         answers: ["Content Recycling bezieht sich auf die Wiederverwendung bereits veröffentlichter (eigener) Inhalte.", "Content Curation ist der Prozess, bei dem relevante und qualitativ hochwertige Inhalte von anderen Quellen ausgewählt und geteilt werden."],
         correct: ["Content Recycling bezieht sich auf die Wiederverwendung bereits veröffentlichter (eigener) Inhalte.", "Content Curation ist der Prozess, bei dem relevante und qualitativ hochwertige Inhalte von anderen Quellen ausgewählt und geteilt werden."]
     },
     {
-        name: "Quiz LF D.2 Frage 06",
-        question: "Welche Hauptformate für Content gibt es?",
-        answers: ["Video.", "Text.", "Audio.", "Bild."],
-        correct: ["Video.", "Text.", "Audio.", "Bild."]
-    },
-    {
         name: "Quiz LF E.1 Frage 01",
-        question: "In welchem Bereich wird der  onlyfy TalentManager\" bevorzugt genutzt?",
+        question: "In welchem Bereich wird der onlyfy TalentManager bevorzugt genutzt?",
         answers: ["a) Social Commerce.", "b) Influencer-Marketing.", "c) Recruiting."],
         correct: ["c) Recruiting."]
-    },
-    {
-        name: "Quiz LF E.1 Frage 02",
-        question: "Was sollten Social-Media-Guidelines enthalten?",
-        answers: ["a) Unternehmenswerte, Unternehmenskultur.", "b) Budgetplanung für Social Media Ads.", "c) Inhalt und Form der Kommunikation.", "d) Rechtliche Hinweise."],
-        correct: ["a) Unternehmenswerte, Unternehmenskultur.", "c) Inhalt und Form der Kommunikation.", "d) Rechtliche Hinweise."]
     },
     {
         name: "Quiz LF E.1 Frage 03",
@@ -1039,12 +961,6 @@ const initialRawQuestions = [
         question: "Warum sollten wir Feiertage und Thementage in unserem Redaktionsplan vermerken?",
         answers: ["a) Damit wir wissen, welche Tage postfrei bleiben.", "b) Es erleichtert die Urlaubsplanung.", "c) An Feiertagen ist das Schalten von Werbeanzeigen günstiger.", "d) Feiertage und Thementage bieten gute Ansätze für abwechslungsreichen und aktuellen Content."],
         correct: ["d) Feiertage und Thementage bieten gute Ansätze für abwechslungsreichen und aktuellen Content."]
-    },
-    {
-        name: "Quiz LF E.1 Frage 05",
-        question: "Was ist mit C2C-Communitys gemeint?",
-        answers: ["a) Company to Company, also Plattformen, auf denen Unternehmen mit anderen Unternehmen interagieren.", "b) Consumer-to-Consumer, also Plattformen, auf denen Kundinnen/Kunden miteinander interagieren, ohne dass ein Unternehmen als Mittler fungiert."],
-        correct: ["b) Consumer-to-Consumer, also Plattformen, auf denen Kundinnen/Kunden miteinander interagieren, ohne dass ein Unternehmen als Mittler fungiert."]
     },
     {
         name: "Quiz LF E.1 Frage 06",
@@ -1065,52 +981,10 @@ const initialRawQuestions = [
         correct: ["Interne Perspektive = Risikobewertung.", "Externe Perspektive = Markt- und Umfeldanalyse."]
     },
     {
-        name: "Quiz LF E.1 Frage 09",
-        question: "Wie kann man die optimalen Uhrzeiten für die Veröffentlichung von Beiträgen finden?",
-        answers: ["a) Analyse von Insights der Plattformen selbst.", "b) Eigenes Austesten und Auswerten.", "c) Über Social-Media-Management-Tools.", "d) Über eine Google-Trend-Analyse."],
-        correct: ["a) Analyse von Insights der Plattformen selbst.", "b) Eigenes Austesten und Auswerten.", "c) Über Social-Media-Management-Tools."]
-    },
-    {
         name: "Quiz LF E.1 Frage 10",
         question: "Was ist das Hauptziel von Community-Engagement im Social-Media-Management?",
         answers: ["a) Die Erstellung möglichst vieler Werbeanzeigen.", "b) Die Reichweite rein organisch zu steigern.", "c) Die Community zu kostenpflichtigen Aktionen bewegen.", "d) Die aktive Beteiligung der Community fördern und erhalten."],
         correct: ["d) Die aktive Beteiligung der Community fördern und erhalten."]
-    },
-    {
-        name: "Quiz LF E.2 Frage 01",
-        question: "Was sind Social Media Guidelines?",
-        answers: ["Social Media Guidelines sind Regeln und Empfehlungen, die Unternehmen ihren Mitarbeitern geben, um ein angemessenes Verhalten in sozialen Medien zu fördern.", "Sie helfen dabei, die Markenreputation zu schützen und rechtliche Risiken zu minimieren.", "Die Richtlinien können für die berufliche und persönliche Nutzung gelten."],
-        correct: ["Social Media Guidelines sind Regeln und Empfehlungen, die Unternehmen ihren Mitarbeitern geben, um ein angemessenes Verhalten in sozialen Medien zu fördern.", "Sie helfen dabei, die Markenreputation zu schützen und rechtliche Risiken zu minimieren.", "Die Richtlinien können für die berufliche und persönliche Nutzung gelten."]
-    },
-    {
-        name: "Quiz LF E.2 Frage 02",
-        question: "Was ist eine Netiquette?",
-        answers: ["Netiquette bezeichnet die Verhaltensregeln und Höflichkeitsstandards, die Nutzer beim Kommunizieren online einhalten sollten.", "Dazu gehört, andere Nutzer mit Respekt zu behandeln, beleidigende Sprache zu vermeiden und die Privatsphäre sowie Meinungen anderer zu respektieren."],
-        correct: ["Netiquette bezeichnet die Verhaltensregeln und Höflichkeitsstandards, die Nutzer beim Kommunizieren online einhalten sollten.", "Dazu gehört, andere Nutzer mit Respekt zu behandeln, beleidigende Sprache zu vermeiden und die Privatsphäre sowie Meinungen anderer zu respektieren."]
-    },
-    {
-        name: "Quiz LF E.2 Frage 03",
-        question: "Was sollte ein Redaktionsplan beinhalten?",
-        answers: ["Ein Redaktionsplan sollte folgende Punkte enthalten:", "Thema des Beitrags.", "Termin der Veröffentlichung.", "Aktueller Bearbeitungsstand.", "Format des Beitrags.", "Freigaben & Zuständigkeiten."],
-        correct: ["Ein Redaktionsplan sollte folgende Punkte enthalten:", "Thema des Beitrags.", "Termin der Veröffentlichung.", "Aktueller Bearbeitungsstand.", "Format des Beitrags.", "Freigaben & Zuständigkeiten."]
-    },
-    {
-        name: "Quiz LF E.2 Frage 04",
-        question: "Was sind Gründe, warum Kunden Communities verlassen?",
-        answers: ["Tod.", "Umzug.", "Änderung der Lebensumstände.", "Fehlende Aufmerksamkeit.", "Preis- oder Qualitätsänderungen."],
-        correct: ["Tod.", "Umzug.", "Änderung der Lebensumstände.", "Fehlende Aufmerksamkeit.", "Preis- oder Qualitätsänderungen."]
-    },
-    {
-        name: "Quiz LF E.2 Frage 05",
-        question: "Wie finde ich die optimale Postingzeiten?",
-        answers: ["Es ist wichtig, die Engagement-Muster der Zielgruppe zu analysieren.", "Plattformen wie Facebook, Instagram und LinkedIn bieten Analyse-Tools, die zeigen, wann die Follower am aktivsten sind.", "Letztendlich hilft nur Testen und Auswerten der eigenen Zielgruppenaktivitäten."],
-        correct: ["Es ist wichtig, die Engagement-Muster der Zielgruppe zu analysieren.", "Plattformen wie Facebook, Instagram und LinkedIn bieten Analyse-Tools, die zeigen, wann die Follower am aktivsten sind.", "Letztendlich hilft nur Testen und Auswerten der eigenen Zielgruppenaktivitäten."]
-    },
-    {
-        name: "Quiz LF E.2 Frage 06",
-        question: "Was ist eine C2C Community?",
-        answers: ["Eine C2C-Community (Consumer-to-Consumer) ist ein Geschäftsmodell, das den direkten Austausch von Waren oder Dienstleistungen zwischen Privatpersonen fördert.", "In solchen Communities können Nutzer sowohl Käufer als auch Verkäufer sein."],
-        correct: ["Eine C2C-Community (Consumer-to-Consumer) ist ein Geschäftsmodell, das den direkten Austausch von Waren oder Dienstleistungen zwischen Privatpersonen fördert.", "In solchen Communities können Nutzer sowohl Käufer als auch Verkäufer sein."]
     },
     {
         name: "Quiz LF G.1 Frage 01",
@@ -1156,7 +1030,7 @@ const initialRawQuestions = [
     },
     {
         name: "Quiz LF G.2 Frage 03",
-        question: "Was ist mit dem Begriff  Learning-Aspekt\" in Bezug auf Social Media Analytics gemeint?",
+        question: "Was ist mit dem Begriff Learning-Aspekt in Bezug auf Social Media Analytics gemeint?",
         answers: ["a) Mit jeder Analyse kann sich der Algorithmus besser auf unsere Zielgruppe und unser Vorhaben einstellen.", "b) Man sollte im Rahmen einer Analyse immer aus den Ergebnissen lernen und Erkenntnisse zur Optimierung zukünftiger Maßnahmen nutzen."],
         correct: ["b) Man sollte im Rahmen einer Analyse immer aus den Ergebnissen lernen und Erkenntnisse zur Optimierung zukünftiger Maßnahmen nutzen."]
     },
@@ -1257,4 +1131,4 @@ const initialRawQuestions = [
         answers: ["Datensammlung", "Integration in bestehende Systeme", "Fokus auf neue Zielgruppen."],
         correct: ["Datensammlung", "Integration in bestehende Systeme"]
     }
-];
+];" in the Canv
