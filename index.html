@@ -26,7 +26,7 @@
             text-align: center;
             margin-bottom: 8px;
         }
-        .setup-screen p {
+        .setup-screen .subtitle {
             text-align: center;
             color: #475569;
             margin-bottom: 32px;
@@ -89,6 +89,28 @@
         .start-quiz-btn:disabled {
             background-color: #9ca3af;
             cursor: not-allowed;
+        }
+        .instructions {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background-color: #f1f5f9;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            text-align: left;
+        }
+        .instructions h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+        .instructions p {
+            color: #475569;
+            margin-bottom: 0.5rem;
+            text-align: left;
+        }
+        .instructions strong {
+            color: #065f46;
         }
 
         /* Quiz Screen Styles */
@@ -301,7 +323,7 @@
         <!-- Screen 1: Setup -->
         <div id="setupScreen" class="setup-screen hidden">
             <h1>Social Media Quiz</h1>
-            <p>Wählen Sie den Modus und die Fragen aus, die Sie üben möchten.</p>
+            <p class="subtitle">Wählen Sie den Modus und die Fragen aus, die Sie üben möchten.</p>
 
             <div class="filter-group">
                 <h3>Modus:</h3>
@@ -328,6 +350,12 @@
                 </div>
             </div>
             <button id="startQuizBtn" class="start-quiz-btn">Quiz starten</button>
+            
+            <div class="instructions">
+                <h3>Informationen zur Bedienung</h3>
+                <p><strong>Übungsmodus:</strong> Wählen Sie gezielt Fragen nach Typ und Lernfeld (LF) aus, um bestimmte Themen zu trainieren. Die Anzahl der Fragen richtet sich nach Ihrer Auswahl.</p>
+                <p><strong>Prüfungsmodus:</strong> Startet eine Prüfungssimulation mit 100 zufällig ausgewählten Fragen aus dem gesamten Pool.</p>
+            </div>
         </div>
 
         <!-- Screen 2: Quiz -->
@@ -358,9 +386,7 @@
 
     <script>
         // --- DATA ---
-        // This list should contain all questions. It's truncated here for brevity.
         const initialRawQuestions = [
-            // ... (previous questions)
             { name: "Musterprüfung A.1-Frage 03", question: "Im Gegensatz zur klassischen TV-Werbung, wo sich der Kunde passiv beschallen lässt, sucht der Online-Kunde aktiv nach Produkten und Dienstleistungen. Mit welchem Fachbegriff wird das Verhalten des Online-Kunden betitelt?", answers: ["Pushing", "Lean forward"], correct: ["Lean forward"] },
             { name: "Musterprüfung G.1- Frage 03", question: "Worin liegt der Schwerpunkt von Social Media Analytics?", answers: ["Erstellung von Social Ads auf Meta", "Beobachtung der Konkurrenz auf X (Twitter) und Foren", "Analyse der Performance der eigenen Social-Media-Kanäle", "Analyse von Kommentaren und Stimmungen auf Bewertungsportalen"], correct: ["Analyse der Performance der eigenen Social-Media-Kanäle"] },
             { name: "Musterprüfung C.1-Frage 02", question: "Welche Formel veranschaulicht die Werbewirkung im Marketing?", answers: ["VERDI", "FISH", "AIDA", "RADAR"], correct: ["AIDA"] },
@@ -373,7 +399,6 @@
             { name: "Musterprüfung F.3 - Frage 02", question: "Was ist ein „Creative\"?", answers: ["Creative bezeichnet das Foto oder Video, welches in einer Anzeige genutzt wird.", "Creative bezeichnet die visuellen, auditiven und textlichen Elemente einer Anzeige."], correct: ["Creative bezeichnet die visuellen, auditiven und textlichen Elemente einer Anzeige."] },
             { name: "Quiz LF B.1 Frage 01", question: "Wie lautet der Grundtyp von Facebook?", answers: ["a) Business-Plattform.", "b) Videoplattform.", "c) Suchmaschine.", "d) Soziales Netzwerk."], correct: ["d) Soziales Netzwerk."] },
             { name: "Quiz LF E.1 Frage 02", question: "Was sollten Social-Media-Guidelines enthalten?", answers: ["a) Unternehmenswerte, Unternehmenskultur.", "b) Budgetplanung für Social Media Ads.", "c) Inhalt und Form der Kommunikation.", "d) Rechtliche Hinweise."], correct: ["a) Unternehmenswerte, Unternehmenskultur.", "c) Inhalt und Form der Kommunikation.", "d) Rechtliche Hinweise."] },
-            // ... (other questions)
             { name: "Quiz LF G Frage 01", question: "Nach welchen drei grundlegenden Analyse-Ansätzen wird Social Media Analyse generell unterschieden?", answers: ["Social Media Analyse", "Social Media Monitoring", "Social Media Monitoring, Social Media Measurement, Social Media Analytics", "Social Listening"], correct: ["Social Media Monitoring, Social Media Measurement, Social Media Analytics"] },
             { name: "Quiz LF G Frage 02", question: "Was wird beim Social Media Monitoring getan?", answers: ["Die Partner unserer eigenen Beiträge", "Die Entwicklung unserer Fan-/Follower-Anzahl", "Das Sammeln und Aufbereiten von für unsere Marke/ unser Unternehmen o. Ä. relevanten Beiträgen", "Die Performance von Werbeanzeigen"], correct: ["Das Sammeln und Aufbereiten von für unsere Marke/ unser Unternehmen o. Ä. relevanten Beiträgen"] },
             { name: "Quiz LF G Frage 03", question: "Was wird bei der Social Media Analytics betrachtet?", answers: ["Die Reichweite unserer Beiträge", "Im Social-Listening versucht man, direkten Dialog/ Einblick in die Zielgruppe zu erhalten, um das \"Warum\" der Monitoring-Aktivitäten besser zu verstehen.", "Metriken in Euro", "Die Interaktionsrate unserer Beiträge"], correct: ["Die Reichweite unserer Beiträge", "Die Interaktionsrate unserer Beiträge"] },
@@ -625,7 +650,7 @@
             } else {
                 answersForm.querySelectorAll('input').forEach(input => {
                     input.disabled = true;
-                    const label = document.getElementById(`label-${input.id}`);
+                    const label = document.getElementById(`label-answer-${input.id.split('-')[1]}`);
                     if (correctAnswers.has(input.value)) {
                         label.classList.add('correct');
                     } else if (input.checked) {
@@ -692,4 +717,3 @@
     </script>
 </body>
 </html>
-
