@@ -516,7 +516,7 @@
         const progressTilesContainer = document.getElementById('progressTiles');
 
         // --- STATE ---
-        const ACCESS_CODE = "2412";
+        const ENCODED_ACCESS_CODE = "MjQxMg=="; // "2412" encoded in Base64
         const INCORRECT_QUESTIONS_KEY = 'incorrectlyAnsweredQuizQuestions';
         const QUESTION_PROGRESS_KEY = 'questionProgress';
         let allQuestions = [];
@@ -874,7 +874,8 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             submitAccessCodeBtn.addEventListener('click', () => {
-                if (accessCodeInput.value === ACCESS_CODE) {
+                // atob() decodes a base-64 encoded string.
+                if (accessCodeInput.value === atob(ENCODED_ACCESS_CODE)) {
                     passwordOverlay.classList.add('hidden');
                     setupScreen.classList.remove('hidden');
                     initializeData();
