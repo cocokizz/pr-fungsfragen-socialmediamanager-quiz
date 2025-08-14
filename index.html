@@ -6,7 +6,8 @@
     <title>Interaktives Social Media Quiz</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <script src="questions.js"></script>
+    <!-- Externe Fragedatei wird hier geladen -->
+    <script src="questions.js" defer></script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -326,48 +327,15 @@
             background-color: #2563eb;
         }
 
-        /* Password Overlay */
-        .password-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(248, 250, 252, 0.95);
-            display: flex; justify-content: center; align-items: center; z-index: 1000;
-        }
-        .password-box {
-            background-color: #ffffff; padding: 40px; border-radius: 12px;
-            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-            text-align: center;
-        }
-        .password-box h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 16px; }
-        .password-box input {
-            padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px;
-            margin-bottom: 16px; font-size: 1.1rem; text-align: center; width: 100%;
-        }
-        .password-box button {
-            background-color: #10b981; color: white; padding: 12px 24px;
-            border: none; border-radius: 8px; cursor: pointer; font-size: 1.1rem;
-            font-weight: 600; transition: background-color 0.2s ease; width: 100%;
-        }
-        .password-box button:hover { background-color: #059669; }
-        .password-box p { color: #ef4444; margin-top: 10px; }
-
         .hidden {
             display: none;
         }
     </style>
 </head>
 <body>
-    <div id="passwordOverlay" class="password-overlay">
-        <div class="password-box">
-            <h2>Zugangscode eingeben</h2>
-            <input type="password" id="accessCodeInput" placeholder="Code eingeben">
-            <button id="submitAccessCode">Zugang</button>
-            <p id="passwordError" class="hidden"></p>
-        </div>
-    </div>
-
     <div class="container">
         <!-- Screen 1: Setup -->
-        <div id="setupScreen" class="setup-screen hidden">
+        <div id="setupScreen" class="setup-screen">
             <h1>Social Media Quiz</h1>
             <p class="subtitle">Wählen Sie den Modus und die Fragen aus, die Sie üben möchten.</p>
 
@@ -456,10 +424,6 @@
 
     <script>
         // --- DOM ELEMENTS ---
-        const passwordOverlay = document.getElementById('passwordOverlay');
-        const accessCodeInput = document.getElementById('accessCodeInput');
-        const submitAccessCodeBtn = document.getElementById('submitAccessCode');
-        const passwordError = document.getElementById('passwordError');
         const setupScreen = document.getElementById('setupScreen');
         const quizScreen = document.getElementById('quizScreen');
         const resultsScreen = document.getElementById('resultsScreen');
@@ -482,7 +446,6 @@
         const progressTilesContainer = document.getElementById('progressTiles');
 
         // --- STATE ---
-        const ACCESS_CODE = "2412";
         const INCORRECT_QUESTIONS_KEY = 'incorrectlyAnsweredQuizQuestions';
         const QUESTION_PROGRESS_KEY = 'questionProgress';
         let allQuestions = [];
@@ -553,13 +516,37 @@
         }
 
         function initializeData() {
+            // Check if questions are loaded from external file
             if (typeof initialRawQuestions === 'undefined') {
-                console.error("Die Fragendatei (fragen.js) konnte nicht geladen werden.");
-                alert("Fehler: Die Fragen konnten nicht geladen werden. Bitte stellen Sie sicher, dass 'fragen.js' im selben Verzeichnis liegt.");
+                console.error("Fragen konnten nicht geladen werden. Stellen Sie sicher, dass 'questions.js' korrekt eingebunden ist.");
+                alert("Fehler: Fragen konnten nicht geladen werden.");
                 return;
             }
+
+            // Process questions to handle object-based answers (for matching questions)
+            const processedQuestions = initialRawQuestions.map(q => {
+                const formatAnswer = (ans) => {
+                    if (typeof ans === 'object' && ans !== null) {
+                        const key = Object.keys(ans)[0];
+                        const value = ans[key];
+                        // Format for matching questions like "1.: Ziel" -> "1. Ziel"
+                        if (/^\d+\.$/.test(key)) {
+                            return `${key} ${value}`;
+                        }
+                        return `${key}: ${value}`;
+                    }
+                    return ans;
+                };
+
+                const newAnswers = q.answers.map(formatAnswer);
+                const newCorrect = q.correct.map(formatAnswer);
+                
+                return { ...q, answers: newAnswers, correct: newCorrect };
+            });
+
+            // Create a map to remove duplicate questions, preferring 'Musterprüfung'
             const questionMap = new Map();
-            initialRawQuestions.forEach(q => {
+            processedQuestions.forEach(q => {
                 const normalizedQuestion = q.question.trim().toLowerCase();
                 if (!questionMap.has(normalizedQuestion) || q.name.includes('Musterprüfung')) {
                     questionMap.set(normalizedQuestion, q);
@@ -843,21 +830,10 @@
             setupScreen.classList.remove('hidden');
         }
 
+        // Wait for the DOM to be fully loaded before initializing
         document.addEventListener('DOMContentLoaded', () => {
-            submitAccessCodeBtn.addEventListener('click', () => {
-                if (accessCodeInput.value === ACCESS_CODE) {
-                    passwordOverlay.classList.add('hidden');
-                    setupScreen.classList.remove('hidden');
-                    initializeData();
-                } else {
-                    passwordError.textContent = 'Falscher Code.';
-                    passwordError.classList.remove('hidden');
-                }
-            });
-            accessCodeInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') submitAccessCodeBtn.click();
-            });
-
+            initializeData();
+            
             modeFilterButtons.addEventListener('click', handleFilterClick);
             typeFilterButtons.addEventListener('click', handleFilterClick);
             sectionFilterButtons.addEventListener('click', handleFilterClick);
